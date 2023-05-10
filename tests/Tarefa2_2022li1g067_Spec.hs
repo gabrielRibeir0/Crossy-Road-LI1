@@ -1,0 +1,17 @@
+module Tarefa2_2022li1g067_Spec where
+
+import LI12223
+import Tarefa2_2022li1g067
+import Test.HUnit
+
+testsT2 :: Test
+testsT2 = TestLabel "Testes Tarefa 2" $ test ["Teste 1" ~: Mapa 3 [(Estrada (-1),[Carro,Nenhum,Carro]),(Relva,[Nenhum,Nenhum,Arvore]),(Relva,[Arvore,Nenhum,Arvore]),(Rio 1,[Nenhum,Tronco,Nenhum])] ~=? estendeMapa (Mapa 3 [(Relva,[Nenhum,Nenhum,Arvore]),(Relva,[Arvore,Nenhum,Arvore]),(Rio 1, [Nenhum,Tronco,Nenhum])]) 5,
+    "Teste 2" ~: Mapa 5 [(Relva,[Arvore,Arvore,Nenhum,Arvore,Nenhum]),(Relva,[Arvore,Nenhum,Arvore,Nenhum,Nenhum]),(Relva,[Nenhum,Nenhum,Arvore,Arvore,Nenhum]),(Estrada 1,[Nenhum,Carro,Nenhum,Nenhum,Carro])] ~=? estendeMapa (Mapa 5 [(Relva,[Arvore,Nenhum,Arvore,Nenhum,Nenhum]),(Relva,[Nenhum,Nenhum,Arvore,Arvore,Nenhum]),(Estrada 1, [Nenhum,Carro,Nenhum,Nenhum,Carro])]) 9,
+    "Teste 3" ~: Mapa 3 [(Relva,[Nenhum,Arvore,Nenhum]),(Estrada 1,[Nenhum,Nenhum,Carro]),(Relva,[Arvore,Nenhum,Nenhum]),(Rio 1,[Tronco,Tronco,Nenhum])] ~=? estendeMapa (Mapa 3 [(Estrada 1,[Nenhum,Nenhum,Carro]),(Relva,[Arvore,Nenhum,Nenhum]),(Rio 1, [Tronco,Tronco,Nenhum])]) 6,
+    "Teste 4" ~: Mapa 3 [(Estrada (-1),[Carro,Nenhum,Carro]),(Estrada 1,[Nenhum,Nenhum,Carro]),(Relva,[Arvore,Nenhum,Nenhum]),(Rio 1,[Tronco,Tronco,Nenhum])] ~=? estendeMapa (Mapa 3 [(Estrada 1,[Nenhum,Nenhum,Carro]),(Relva,[Arvore,Nenhum,Nenhum]),(Rio 1, [Tronco,Tronco,Nenhum])]) 5,
+    "Teste 5" ~: Mapa 4 [(Rio 2,[Tronco,Nenhum,Nenhum,Tronco]),(Rio (-1),[Nenhum,Nenhum,Tronco,Tronco]),(Estrada 2,[Nenhum,Nenhum,Nenhum,Carro]),(Rio 1,[Tronco,Tronco,Nenhum,Tronco])] ~=? estendeMapa (Mapa 4 [(Rio (-1),[Nenhum,Nenhum,Tronco,Tronco]),(Estrada 2,[Nenhum,Nenhum,Nenhum,Carro]),(Rio 1, [Tronco,Tronco,Nenhum,Tronco])]) 13,
+    "Teste 6" ~: Mapa 4 [(Relva,[Nenhum,Nenhum,Nenhum,Nenhum]),(Rio (-1),[Nenhum,Nenhum,Tronco,Tronco]),(Estrada 2,[Nenhum,Nenhum,Nenhum,Carro]),(Rio 1,[Tronco,Tronco,Nenhum,Tronco])] ~=? estendeMapa (Mapa 4 [(Rio (-1),[Nenhum,Nenhum,Tronco,Tronco]),(Estrada 2,[Nenhum,Nenhum,Nenhum,Carro]),(Rio 1, [Tronco,Tronco,Nenhum,Tronco])]) 12,
+    "Teste 7" ~: Mapa 3 [(Estrada (-1),[Carro,Nenhum,Carro]),(Rio 2,[Nenhum,Nenhum,Tronco]),(Estrada 2,[Nenhum,Nenhum,Nenhum]),(Relva,[Arvore,Nenhum,Arvore])] ~=? estendeMapa (Mapa 3 [(Rio 2,[Nenhum,Nenhum,Tronco]),(Estrada 2,[Nenhum,Nenhum,Nenhum]),(Relva, [Arvore,Nenhum,Arvore])]) 17,
+    "Teste 8" ~: Mapa 6 [(Relva,[Nenhum,Nenhum,Nenhum,Nenhum,Nenhum,Nenhum])] ~=? estendeMapa (Mapa 6 []) 10,
+    "Teste 9" ~: Mapa 5 [(Estrada 2,[Nenhum,Nenhum,Carro,Nenhum,Nenhum]),(Rio (-1),[Nenhum,Nenhum,Tronco,Tronco,Nenhum]),(Estrada 2,[Nenhum,Nenhum,Nenhum,Carro,Nenhum]),(Relva,[Arvore,Nenhum,Arvore,Nenhum,Nenhum])] ~=? estendeMapa (Mapa 5 [(Rio (-1),[Nenhum,Nenhum,Tronco,Tronco,Nenhum]),(Estrada 2,[Nenhum,Nenhum,Nenhum,Carro,Nenhum]),(Relva, [Arvore,Nenhum,Arvore,Nenhum,Nenhum])]) 14,
+    "Teste 10" ~: Mapa 5 [(Rio 2,[Tronco,Tronco,Nenhum,Nenhum,Tronco]),(Rio (-1),[Tronco,Nenhum,Nenhum,Tronco,Nenhum]),(Relva,[Nenhum,Nenhum,Arvore,Nenhum,Nenhum]),(Rio 1,[Tronco,Nenhum,Tronco,Nenhum,Nenhum])] ~=? estendeMapa (Mapa 5 [(Rio (-1),[Tronco,Nenhum,Nenhum,Tronco,Nenhum]),(Relva,[Nenhum,Nenhum,Arvore,Nenhum,Nenhum]),(Rio 1, [Tronco,Nenhum,Tronco,Nenhum,Nenhum])]) 19]
